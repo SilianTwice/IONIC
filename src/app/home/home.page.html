@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{pgName}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button (click)="btnClick()">
+    <ion-icon  slot="icon-only" name="heart"></ion-icon>
+  </ion-button>
+
+  <ion-item>
+    <ion-input label = " " [(ngModel)] = "pgName "></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor ="let pokemon of pokemons">
+      <ion-label>{{pokemon}} </ion-label>
+    </ion-item>  
+  </ion-list>
+
+  <ion-grid>
+    <ion-row *ngFor = "let pp of poke">
+      <ion-col>{{pp.pName}}</ion-col>
+      <ion-col>{{pp.pAbilitise}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
